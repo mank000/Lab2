@@ -1,38 +1,32 @@
 ﻿#include <iostream>
 #include <clocale>
 using namespace std;
-int solution_1() {
+auto solution_1() {
     const double pi = 3.14159265358979323846;
     float UserAngle;
-    while (true) {
-        cout << "Введите число градусов,для выхода из подпрограммы напишите -1\n";
+        cout << "Введите число градусов\n";
         cin >> UserAngle;
-        if ((UserAngle >= 0) and (UserAngle < 360)) cout << ((pi * UserAngle) / 180) << "\n";
-        else if (UserAngle == -1) break;
-        else { cout << "Неверный угол.\n"; };
-    }
+        if ((UserAngle >= 0) and (UserAngle < 360)) return ((pi * UserAngle) / 180);
+        else return 0.0;
 }
-int solution_2() {
+auto solution_2() {
     int UserNumber;
-    while (true) {
         cout << "Print 3\n";
         cin >> UserNumber;
-        if ((UserNumber / 100 < 10) and (UserNumber / 100 != 0)) cout << "First number is..." << (UserNumber / 100) << "\n";
-        else if (UserNumber == -1) break;
-        else { cout << "Число должно быть трёхзначным!\n"; };
-
-    }
+        if ((UserNumber / 100 < 10) and (UserNumber / 100 != 0)) return (UserNumber / 100);
+        else return 1;
 }
 int main() {
     setlocale(LC_ALL, "ru");
-    cout << "Здравствуйте, напишите номер подпрограммы, в которую хотите попасть\n (1 или 2 для выхода введите -1)\n";
     int UserChoise;
     while (true) {
+        cout << "Здравствуйте, напишите номер подпрограммы, в которую хотите попасть\n(1 или 2 для выхода введите -1)\n";
         cin >> UserChoise;
-        if (UserChoise == 1) solution_1();
-        else if (UserChoise == 2) solution_2();
+        if (UserChoise == 1) cout << solution_1();
+        else if (UserChoise == 2) cout << solution_2();
         else if (UserChoise == -1) break;
         else cout << "Неправильная цифра!";
+        cout << "\n";
     }
     /**switch (UserChoise)
     {
