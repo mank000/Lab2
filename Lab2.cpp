@@ -1,20 +1,25 @@
 ﻿#include <iostream>
 #include <clocale>
 using namespace std;
+/*
+* @brief ЛР№2/ Линейный вычислительный процесс.
+* 1. Дано значение угла α в градусах (0 ≤ α < 360). Найти значение угла в радианах.
+*/
 auto solution_1() {
-    const double pi = 3.14159265358979323846;
+    const double PI = 3.14159265358979323846;
     float UserAngle;
-        cout << "Введите число градусов\n";
-        cin >> UserAngle;
-        if ((UserAngle >= 0) and (UserAngle < 360)) return ((pi * UserAngle) / 180);
-        else return 0.0;
+    cout << "Введите число градусов.\n";
+    cin >> UserAngle;
+    if ((UserAngle >= 0) and (UserAngle < 360)) return ((PI * UserAngle) / 180);    
+    return 0.0; 
 }
+//2.Дано трехзначное число. Вывести первую цифру числа.
 auto solution_2() {
     int UserNumber;
-        cout << "Print 3\n";
-        cin >> UserNumber;
-        if ((UserNumber / 100 < 10) and (UserNumber / 100 != 0)) return (UserNumber / 100);
-        else return 1;
+    cout << "Напишите трёх значное число.\n";
+    cin >> UserNumber;
+    if ((UserNumber / 100 < 10) and (UserNumber / 100 != 0)) return (UserNumber / 100); 
+    return 0;
 }
 int main() {
     setlocale(LC_ALL, "ru");
@@ -28,13 +33,4 @@ int main() {
         else cout << "Неправильная цифра!";
         cout << "\n";
     }
-    /**switch (UserChoise)
-    {
-    case 1: solution_1();
-    case 2: solution_2();
-    case -1: exit;
-    default: cout << "Неправильная цифра!\n"; break;
-    }
-    */
-
 }
